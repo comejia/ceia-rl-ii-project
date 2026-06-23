@@ -61,10 +61,6 @@ class RobotArmEnv(gym.Env):
 
         self.robot = p.loadURDF("kuka_iiwa/model.urdf", useFixedBase=True)
 
-        # self.target_pos = np.random.uniform(
-        #    low=[0.4, -0.3, 0.2],
-        #    high=[0.7, 0.3, 0.6]
-        # )
         self.target_pos = np.random.uniform(low=[0.5, -0.1, 0.4], high=[0.6, 0.1, 0.5])
 
         self.target = p.loadURDF("sphere_small.urdf", basePosition=self.target_pos)

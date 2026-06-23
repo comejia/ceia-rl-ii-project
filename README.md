@@ -100,8 +100,6 @@ python record_episode.py
 
 Ejecuta un episodio con renderizado visual y genera `robot_arm_success.gif` con la animación del brazo alcanzando el objetivo.
 
-> **Nota:** requiere display gráfico (o `xvfb-run` en headless).
-
 ## Entorno
 
 - **Observaciones (23 dim):** posiciones y velocidades de 7 articulaciones + posición del end-effector + posición del target + vector error

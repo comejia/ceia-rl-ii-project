@@ -1,7 +1,5 @@
 import numpy as np
-
 from stable_baselines3 import PPO
-
 from robot_arm_env import RobotArmEnv
 
 
@@ -9,13 +7,9 @@ RENDER = False
 EPISODES = 100
 MODEL = "ppo_robot_arm_v2_5cm"
 
-model = PPO.load(
-    MODEL
-)
+model = PPO.load(MODEL)
 
-env = RobotArmEnv(
-    render=RENDER
-)
+env = RobotArmEnv(render=RENDER)
 
 successes = 0
 rewards = []
@@ -24,7 +18,6 @@ steps_success = []
 
 
 for episode in range(EPISODES):
-
     obs, info = env.reset()
 
     terminated = False
@@ -34,25 +27,17 @@ for episode in range(EPISODES):
     steps = 0
 
     while not terminated and not truncated:
+        action, _ = model.predict(obs, deterministic=True)
 
-        action, _ = model.predict(
-            obs,
-            deterministic=True
-        )
-
-        obs, reward, terminated, truncated, info = env.step(
-            action
-        )
+        obs, reward, terminated, truncated, info = env.step(action)
 
         episode_reward += reward
         steps += 1
 
-    
     final_distance = env._distance_to_target()
-    
+
     rewards.append(episode_reward)
 
-    #if terminated:
     if final_distance < 0.05:
         successes += 1
         steps_success.append(steps)

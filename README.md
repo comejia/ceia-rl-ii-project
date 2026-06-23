@@ -4,11 +4,17 @@ Control de un brazo robótico Kuka IIWA de 7 articulaciones usando PPO (Proximal
 
 El entorno usa PyBullet como simulador físico y Stable-Baselines3 como framework de RL.
 
-![Robot Arm](trabajo_practico/robot_arm_success.gif)
+<p align="center">
+  <img src="trabajo_practico/robot_arm_success.gif" width="800">
+</p>
 
 ## Estructura del proyecto
 
 ```
+docs/
+├── Cesar Mejia - Desafio Final.pdf   # Informe final del proyecto
+└── Desafio final RL2 2026.pdf        # Consigna del desafío
+
 trabajo_practico/
 ├── robot_arm_env.py          # Entorno custom Gymnasium del brazo robótico
 ├── test_ppo.py               # Script de entrenamiento con PPO
@@ -57,7 +63,7 @@ cd trabajo_practico
 ### Entrenamiento
 
 ```bash
-uv run python test_ppo.py
+uv run test_ppo.py
 # o sin uv
 python test_ppo.py
 ```
@@ -77,7 +83,7 @@ tensorboard --logdir ./logs
 El repositorio incluye un modelo pre-entrenado (`ppo_robot_arm_v2_5cm.zip`) listo para evaluar sin necesidad de entrenar:
 
 ```bash
-uv run python evaluate.py
+uv run evaluate.py
 # o sin uv
 python evaluate.py
 ```
@@ -87,7 +93,7 @@ Ejecuta 100 episodios con el modelo guardado y muestra métricas: tasa de éxito
 ### Grabar GIF
 
 ```bash
-uv run python record_episode.py
+uv run record_episode.py
 # o sin uv
 python record_episode.py
 ```

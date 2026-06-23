@@ -13,7 +13,7 @@ model = PPO("MlpPolicy", env, verbose=1, device="cpu", tensorboard_log="./logs")
 
 # # Transfer Learning
 # model = PPO.load(
-#     "<model_saved>",
+#     "<saved_model>",
 #     env=env,
 #     verbose=1,
 #     device="cpu",

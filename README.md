@@ -74,6 +74,8 @@ tensorboard --logdir ./logs
 
 ### Evaluación
 
+El repositorio incluye un modelo pre-entrenado (`ppo_robot_arm_v2_5cm.zip`) listo para evaluar sin necesidad de entrenar:
+
 ```bash
 uv run python evaluate.py
 # o sin uv

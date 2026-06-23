@@ -5,10 +5,10 @@ from robot_arm_env import RobotArmEnv
 
 RENDER = False
 EPISODES = 100
-MODEL = "ppo_robot_arm_v2_5cm"
+SAVED_MODEL = "ppo_robot_arm_v2_5cm"
 
 
-model = PPO.load(MODEL)
+model = PPO.load(SAVED_MODEL)
 
 env = RobotArmEnv(render=RENDER)
 

@@ -7,6 +7,7 @@ RENDER = False
 EPISODES = 100
 MODEL = "ppo_robot_arm_v2_5cm"
 
+
 model = PPO.load(MODEL)
 
 env = RobotArmEnv(render=RENDER)

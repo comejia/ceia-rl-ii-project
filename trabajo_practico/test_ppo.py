@@ -4,6 +4,7 @@ from robot_arm_env import RobotArmEnv
 
 from stable_baselines3.common.monitor import Monitor
 
+
 env = Monitor(RobotArmEnv(render=False), filename="monitor.csv")
 
 

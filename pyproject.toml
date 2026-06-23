@@ -1,0 +1,26 @@
+[project]
+name = "ceia-reinforcement-learning-ii"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gymnasium[box2d]>=1.2.3",
+    "imageio>=2.37.3",
+    "ipykernel>=7.2.0",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.3",
+    "pybullet>=3.2.7",
+    "stable-baselines3[extra]>=2.8.0",
+    "tensorboard>=2.20.0",
+    "tqdm>=4.67.3",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+    "ruff>=0.15.7",
+]
+
+[tool.ruff]
+line-length = 100
